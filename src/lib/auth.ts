@@ -12,7 +12,7 @@ export const auth = betterAuth({
     provider: "pg",
     schema: { user, session, account, verification },
   }),
-  trustedOrigins: ["http://localhost:3000"],
+  trustedOrigins: [`${process.env.NEXT_FRONTEND_URL}`],
   baseURL: process.env.BETTER_AUTH_URL,
   socialProviders: {
     google: {
